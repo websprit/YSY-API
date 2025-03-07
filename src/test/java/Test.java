@@ -8,10 +8,6 @@ import cn.ysy.open.response.AccessToken;
 import cn.ysy.open.response.BasicResponse;
 
 /**
- * @author wumu
- * @version V1.0
- * @date 5/20/18
- * @time 2:30 PM
  */
 public class Test {
 
