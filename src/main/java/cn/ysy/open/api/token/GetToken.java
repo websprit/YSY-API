@@ -19,7 +19,7 @@ import java.util.Map;
  */
 public class GetToken extends AbstractAPI {
 
-    //private String url = "https://open.ys7.com/api/lapp/token/get";
+    private String url = "https://open.ys7.com/api/lapp/token/get";
     private String appKey;
     private String appSecret;
     //private String host;
@@ -59,7 +59,7 @@ public class GetToken extends AbstractAPI {
             //中间进行了一次字段转换，不清楚具体实现的效果
             response = JSON.parseObject(httpResponse.getEntity().getContent(), BasicResponse.class);
             response.setJson(JSON.toJSONString(response));
-            Object data = JSON.parseObject(JSON.toJSONString(response.getDataInternal()), AccessToken.class);
+            Object data = JSON.parseObject(JSON.toJSONString(response.getData()), AccessToken.class);
             response.setData(data);
         } catch (IOException e) {
             e.printStackTrace();

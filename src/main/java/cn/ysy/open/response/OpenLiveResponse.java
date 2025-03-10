@@ -4,44 +4,34 @@ package cn.ysy.open.response;
  */
 public class OpenLiveResponse {
 
-    private String deviceSerial;
+    private String id;
 
-    private String channelNo;
+    private String url;
 
-    private String ret;
-
-    private String desc;
+    private String expireTime;
 
 
-    public String getDeviceSerial() {
-        return deviceSerial;
+    public String getId() {
+        return id;
     }
 
-    public void setDeviceSerial(String deviceSerial) {
-        this.deviceSerial = deviceSerial;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getChannelNo() {
-        return channelNo;
+    public String getUrl() {
+        return url;
     }
 
-    public void setChannelNo(String channelNo) {
-        this.channelNo = channelNo;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public String getRet() {
-        return ret;
+    public String getExpireTime() {
+        return expireTime;
     }
 
-    public void setRet(String ret) {
-        this.ret = ret;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setExpireTime(String expireTime) {
+        this.expireTime = expireTime;
     }
 }

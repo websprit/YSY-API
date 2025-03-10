@@ -34,12 +34,22 @@ import cn.ysy.open.utils.HttpUtil;
  */
 public class OpenLive extends AbstractAPI {
 
-    private String source;
+    private String deviceSerial;
     private HttpPostMethod httpPostMethod;
+    private Integer protocol =4;
 
-    public OpenLive(String accessToken, String source) {
+    /**
+     *
+     * @param accessToken
+     * @param deviceSerial
+     * @param protocol 流播放协议，1-ezopen、2-hls、3-rtmp、4-flv，默认为1
+     */
+    public OpenLive(String accessToken, String deviceSerial,Integer protocol) {
         this.accessToken = accessToken;
-        this.source = source;
+        this.deviceSerial = deviceSerial;
+        if(protocol!=null){
+            this.protocol = protocol;
+        }
         this.url = ServerConstant.WEB_LIVE_OPEN_LIVE;
 
         HttpUtil httpUtil = new HttpUtil();
@@ -47,8 +57,8 @@ public class OpenLive extends AbstractAPI {
         httpPostMethod = new HttpPostMethod(method);
         httpPostMethod.setHeader(headMap);
 
-        Map<String, Object> bodyMap = httpUtil.setBodyMap(accessToken, null, null);
-        bodyMap.put("source", source);
+        Map<String, Object> bodyMap = httpUtil.setBodyMap(accessToken, deviceSerial, null);
+        bodyMap.put("protocol", protocol);
 
         httpPostMethod.setCompleteUrl(url, bodyMap);
     }
@@ -62,7 +72,7 @@ public class OpenLive extends AbstractAPI {
             response.setJson(JSON.toJSONString(response));
 
             // 将json对象转化成DeviceList对象数组ArrayList(DeviceListResponse)
-            Object bs = response.getDataInternal();
+            Object bs = response.getData();
             String stringJson = JSON.toJSONString(bs);
             List<OpenLiveResponse> openLiveResponses =
                 JSON.parseObject(stringJson, new TypeReference<ArrayList<OpenLiveResponse>>() {});

@@ -27,7 +27,7 @@ public interface ServerConstant {
     // web设备直播查询设置
     String WEB_LIVE_PERIOD_ADDRESS = "https://open.ys7.com/api/lapp/live/address/limited";
     String WEB_LIVE_ADDRESS_LIST = "https://open.ys7.com/api/lapp/live/video/list";
-    String WEB_LIVE_OPEN_LIVE = "https://open.ys7.com/api/lapp/live/video/open";
+    String WEB_LIVE_OPEN_LIVE = "https://open.ys7.com/api/lapp/v2/live/address/get";
 
     // 云台控制
     String START_PTZ = "https://open.ys7.com/api/lapp/device/ptz/start";
