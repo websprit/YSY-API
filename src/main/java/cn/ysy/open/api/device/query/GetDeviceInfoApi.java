@@ -14,7 +14,6 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
- * @author wumu
  */
 public class GetDeviceInfoApi extends AbstractAPI{
 
