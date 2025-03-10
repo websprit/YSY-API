@@ -19,7 +19,6 @@ import java.util.Map;
 /**
  * 查询用户下设备基本信息列表
  *注：个人版设备接入上限：10台。无分页功能；如需要完善的功能，请升级为企业版
- * @author wumu
  */
 public class GetDeviceListApi extends AbstractAPI {
 
