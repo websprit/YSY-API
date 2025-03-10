@@ -64,7 +64,7 @@ public class GetDeviceListApi extends AbstractAPI {
             // 将json对象转化成DeviceList对象数组ArrayList(DeviceListResponse)
             List<DeviceListResponse> listResponses = new ArrayList<DeviceListResponse>();
             //DeviceListResponse[] deviceListResponses = new DeviceListResponse[];
-            Object bs = response.getDataInternal();
+            Object bs = response.getData();
             String stringJson = JSON.toJSONString(bs);
             listResponses = JSON.parseObject(stringJson,List.class);
             //JavaType javaType = getCollectionType(ArrayList.class,DeviceListResponse.class);
